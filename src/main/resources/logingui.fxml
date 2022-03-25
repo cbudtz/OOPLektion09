@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.Scene?>
+
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Button?>
+<Scene xmlns="http://javafx.com/javafx"
+       xmlns:fx="http://javafx.com/fxml"
+       fx:controller="control.LoginGuiController"
+       width="800" height="600"
+>
+    <FlowPane orientation="VERTICAL" alignment="CENTER">
+        <TextField fx:id="username">
+        </TextField>
+        <TextField fx:id="password">
+        </TextField>
+        <Button onAction="#login">
+            Login!
+        </Button>
+    </FlowPane>
+</Scene>
