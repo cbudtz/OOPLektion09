@@ -2,8 +2,10 @@ package control;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
@@ -19,14 +21,16 @@ public class LoginGuiController implements Initializable {
     public TextField password;
     private FXAPP fxapp;
 
+
     public void setParentController(FXAPP fxapp) {
         this.fxapp=fxapp;
     }
 
     public void login(ActionEvent mouseEvent) throws IOException {
-        //Yuck - double cast - alternative solution to swapping scenes... :
-        //((Stage)((Node)mouseEvent.getSource()).getScene().getWindow()).setScene();
         if ("brian".equals(username.getText()) && "kodeord".equals(password.getText())){
+            //Yuck - double cast - alternative solution to swapping scenes... :
+            //Scene mainScene = new FXMLLoader(getClass().getResource("/mainGui.fxml")).load();
+            //((Stage)((Node)mouseEvent.getSource()).getScene().getWindow()).setScene(mainScene);
             fxapp.login();
         }
     }
